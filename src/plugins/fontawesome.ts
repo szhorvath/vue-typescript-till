@@ -3,7 +3,7 @@ import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
   faPlusSquare,
   faMinusSquare,
-  faTrashAlt
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

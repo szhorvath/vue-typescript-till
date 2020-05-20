@@ -9,13 +9,13 @@ type ProductGetter = GetterTree<ProductState, any>;
 export const state: ProductState = {
   products: [],
   list: [],
-  total: 0
+  total: 0,
 };
 
 export const getters: ProductGetter = {
-  products: state => state.products,
-  list: state => state.list,
-  total: state => state.total
+  products: (state) => state.products,
+  list: (state) => state.list,
+  total: (state) => state.total,
 };
 
 export const mutations: MutationTree<ProductState> = {
@@ -24,7 +24,7 @@ export const mutations: MutationTree<ProductState> = {
   },
 
   addToList(state, product: Product) {
-    const existing = state.list.find(item => {
+    const existing = state.list.find((item) => {
       return item.product.Id === product.Id;
     });
 
@@ -33,7 +33,7 @@ export const mutations: MutationTree<ProductState> = {
     } else {
       state.list.push({
         product,
-        quantity: 1
+        quantity: 1,
       });
     }
   },
@@ -44,7 +44,7 @@ export const mutations: MutationTree<ProductState> = {
   },
 
   decreaseQty(state, product: Product) {
-    const existing = state.list.find(item => {
+    const existing = state.list.find((item) => {
       return item.product.Id === product.Id;
     });
 
@@ -56,12 +56,12 @@ export const mutations: MutationTree<ProductState> = {
   calculateTotal(state) {
     let total = 0;
 
-    state.list.map(item => {
+    state.list.map((item) => {
       const totalLine = item.product.SalePrice * item.quantity;
       total += totalLine;
     });
     state.total = total.toFixed(2);
-  }
+  },
 };
 
 export const actions: ActionTree<ProductState, any> = {
@@ -86,12 +86,12 @@ export const actions: ActionTree<ProductState, any> = {
   decreaseQty({ commit }, product: Product) {
     commit("decreaseQty", product);
     commit("calculateTotal");
-  }
+  },
 };
 
 export const products = {
   state,
   getters,
   mutations,
-  actions
+  actions,
 };

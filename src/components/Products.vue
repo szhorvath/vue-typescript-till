@@ -1,7 +1,11 @@
 <template>
   <section class="products">
     <div class="tile is-ancestor">
-      <div class="tile is-6 is-vertical is-parent" v-for="(chunk, index) in productChunk" :key="index">
+      <div
+        class="tile is-6 is-vertical is-parent"
+        v-for="(chunk, index) in productChunk"
+        :key="index"
+      >
         <a
           class="tile is-child box products__tile"
           v-for="product in chunk"

@@ -1,3 +1,3 @@
-import './axios';
-import './buefy';
-import './fontawesome';
+import "./axios";
+import "./buefy";
+import "./fontawesome";

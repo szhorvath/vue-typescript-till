@@ -19,7 +19,7 @@ import List from "@/components/List.vue";
 @Component({
   components: {
     Products,
-    List
+    List,
   },
 })
 export default class Till extends Vue {}
